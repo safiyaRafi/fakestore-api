@@ -1,5 +1,14 @@
-import { describe, it, expect } from 'vitest';
-import reducer, { setSearch, setCategory, setSort } from './productSlice';
+import { describe, it, expect, vi } from 'vitest';
+import reducer, { setSearch, setCategory, setSort, fetchProducts } from './productSlice';
+import { productApi } from '../../services/api';
+
+// Mock the API service
+vi.mock('../../services/api', () => ({
+    productApi: {
+        getAllProducts: vi.fn(),
+    },
+    default: {}
+}));
 
 describe('productSlice reducer', () => {
     const initialState = {
@@ -40,5 +49,20 @@ describe('productSlice reducer', () => {
         expect(actual.filters.sort).toEqual('price-high-low');
         expect(actual.filteredItems[0].price).toEqual(20);
         expect(actual.filteredItems[1].price).toEqual(10);
+    });
+
+    it('should update status when fetchProducts is pending', () => {
+        const newState = reducer(initialState, { type: fetchProducts.pending.type });
+        expect(newState.status).toEqual('loading');
+    });
+
+    it('should update items when fetchProducts is fulfilled', () => {
+        const products = [{ id: 1, title: 'New Product', price: 50 }];
+        const newState = reducer(initialState, {
+            type: fetchProducts.fulfilled.type,
+            payload: products
+        });
+        expect(newState.status).toEqual('succeeded');
+        expect(newState.items).toEqual(products);
     });
 });

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">88.88% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6/18</span>
+                <span class='fraction'>16/18</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">14.28% </span>
+                <span class="strong">71.42% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/7</span>
+                <span class='fraction'>5/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">42.85% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6/14</span>
+                <span class='fraction'>14/14</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -101,37 +101,37 @@
 <a name='L36'></a><a href='#L36'>36</a>
 <a name='L37'></a><a href='#L37'>37</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -145,21 +145,21 @@ const favoriteSlice = createSlice({
     name: 'favorites',
     initialState,
     reducers: {
-        toggleFavorite: <span class="fstat-no" title="function not covered" >(s</span>tate, action) =&gt; {
-            const product = <span class="cstat-no" title="statement not covered" >action.payload;</span>
-            const index = <span class="cstat-no" title="statement not covered" >state.favorites.findIndex(<span class="fstat-no" title="function not covered" >item </span>=&gt; <span class="cstat-no" title="statement not covered" >item.id === product.id)</span>;</span>
+        toggleFavorite: (state, action) =&gt; {
+            const product = action.payload;
+            const index = state.favorites.findIndex(item =&gt; item.id === product.id);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            if (index &gt;= 0) {</span>
-<span class="cstat-no" title="statement not covered" >                state.favorites.splice(index, 1);</span>
+            if (index &gt;= 0) {
+                state.favorites.splice(index, 1);
             } else {
-<span class="cstat-no" title="statement not covered" >                state.favorites.push(product);</span>
+                state.favorites.push(product);
             }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            localStorage.setItem('favorites', JSON.stringify(state.favorites));</span>
+            localStorage.setItem('favorites', JSON.stringify(state.favorites));
         },
-        removeFavorite: <span class="fstat-no" title="function not covered" >(s</span>tate, action) =&gt; {
-<span class="cstat-no" title="statement not covered" >            state.favorites = state.favorites.filter(<span class="fstat-no" title="function not covered" >item </span>=&gt; <span class="cstat-no" title="statement not covered" >item.id !== action.payload)</span>;</span>
-<span class="cstat-no" title="statement not covered" >            localStorage.setItem('favorites', JSON.stringify(state.favorites));</span>
+        removeFavorite: (state, action) =&gt; {
+            state.favorites = state.favorites.filter(item =&gt; item.id !== action.payload);
+            localStorage.setItem('favorites', JSON.stringify(state.favorites));
         },
     },
 });
@@ -178,7 +178,7 @@ export default favoriteSlice.reducer;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-01-02T09:47:30.735Z
+                at 2026-01-02T09:55:51.684Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
