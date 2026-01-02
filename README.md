@@ -84,17 +84,27 @@ Instead of generic utilities, the project uses a custom design system built on *
 
 ---
 
-## 🧪 Testing
+## 🧪 Testing & Coverage
 
 The project maintains a healthy test suite focusing on business logic and component reliability.
 
-**Run All Tests:**
+### Test Results
+All implemented tests are passing:
+- **Product Listing Logic**: Verified search, filter, and sort reducers.
+- **Component Integrity**: Verified `ProductCard` rendering and favoriting UI.
+
+### Running Tests
+To run the tests and see the results:
 ```bash
 npm run test
 ```
 
-- **Unit Tests**: Redux reducers (loading, filtering, sorting).
-- **Component Tests**: Core UI rendering and user interactions.
+### Coverage Reports
+I have integrated `vitest` coverage reporting. You can generate a full HTML report by running:
+```bash
+npm run test:coverage
+```
+After running, you can find the detailed report in the `coverage/` directory.
 
 ---
 
